@@ -63,12 +63,10 @@ jobs:
 
       # Autenticarse en Google Cloud usando una clave de cuenta de servicio
       - name: 'Authenticate to Google Cloud'
-        uses: 'google-github-actions/setup-gcloud@v1'
+        uses: 'google-github-actions/auth@v0'
         with:
-          project_id: ${{ env.PROJECT_ID }}
-          service_account_key: ${{ secrets.GCP_SERVICE_ACCOUNT_KEY }}
-          export_default_credentials: true
-
+          credentials_json: '${{ secrets.GCP_SERVICE_ACCOUNT_KEY }}'
+      
       # Autenticar Docker en Artifact Registry
       - name: 'Docker Auth'
         run: |
