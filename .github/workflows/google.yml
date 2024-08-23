@@ -42,7 +42,7 @@ env:
   PROJECT_ID: 'cess-dev-tools' # TODO: actualiza con tu ID de proyecto de Google Cloud
   GAR_LOCATION: 'us-central1' # TODO: actualiza con tu región
   GKE_CLUSTER: ' gke-cluster' # TODO: actualiza con el nombre de tu clúster
-  GKE_ZONE: 'us-central1-c' # TODO: actualiza con la zona de tu clúster
+  GKE_ZONE: 'us-central1' # TODO: actualiza con la zona de tu clúster
   DEPLOYMENT_NAME: 'gke-test' # TODO: actualiza con el nombre de tu despliegue
   REPOSITORY: 'app-helloworld-py' # Repositorio genérico en Artifact Registry
 
@@ -50,7 +50,7 @@ jobs:
   setup-build-publish-deploy:
     name: 'Setup, Build, Publish, and Deploy'
     runs-on: 'ubuntu-latest'
-    environment: 'production'
+    environment: 'test'
 
     permissions:
       contents: 'read'
